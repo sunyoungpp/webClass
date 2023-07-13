@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math모음</title>
+</head>
+<body>
+    <h1>수학관련도구(Math객체함수)</h1>
+    <p>수학적인 계산을 한 후 결과를 그 자리에 남기는 도구</p>
+    <script>
+        console.log(Math.round(96.666666)) // 반올림
+        console.log(Math.ceil(96.111111)) // 올림
+        console.log(Math.floor(50.999999)) // 내림
+        console.log(Math.pow(2,3)) // 2의 3제곱
+        console.log(Math.sqrt(100))  // 100의 제곱근(루트)
+        console.log(Math.abs(-1000)) // 절대값
+        console.log(Math.min(1,2,3,4,5,-2)) // 최소값 구하기   
+        console.log(Math.max(2,4,100)) // 최대값 구하기
+        console.log(Math.round(Math.random()*5)) // 0과 5사이의 어떤 수
+
+        let r = Math.round(Math.random()*255)
+        let g = Math.round(Math.random()*255)
+        let b = Math.round(Math.random()*255)
+        console.log(r,g,b)
+
+        document.write(`<h1 style="background:rgb(${r},${g},${b});">반갑습니다 오늘도 열심히 해봅시다😩</h1>`)
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비만도예제</title>
+    <link rel="stylesheet" href="./css/ex1.css">
+    
+</head>
+<body>
+    <h1>퀴즈</h1>
+    <pre>사용자에게 체중과 키를 입력받아서 bmi수치를 계산하여 수치에 따라 비만 과체중 정상 저체중으로 나누어 결과를 body태그에 필기하는 소스코드를 완성해보세요
+
+        bmi 계산식
+        70kg의 170cm의 bmi수치 계산식
+        70/(1.7*1.7)
+
+        계산된 bmi가 25 이상이라면 비만
+                    23이상 24.9이하라면 과체중
+                    18.5이상 22.9이하라면 정상
+                    18.5미만 이라면 저체중
+        완성예시) 당신의 키는 170센티미터이고 몸무게는 70kg입니다 bmi수치는 24.2이며 과체중입니다
+    </pre>
+
+    <script>
+        let name = (prompt("이름을 입력해주세요"))
+        let height = Number(prompt("키를 입력해주세요"))
+        let weight = Number(prompt("몸무게를 입력해주세요"))
+        let bmi = weight / Math.pow((height/100),2) 
+        // let bmi = Math.round(w/((h*0.01)*(h*0.01)))
+       
+        // let a = bmi>=25 ? "비만":
+        //         bmi>=23 && bmi<=24.9 ? "과체중" :
+        //         bmi>18.5 && bmi<=22.9 ? "정상" : "저체중"
+
+        let bmiResult;
+        if(bmi>=25){
+            bmiResult = "비만"
+        }else if(bmi>=23 && bmi<=24.9){
+            bmiResult = "과체중"
+        }else if(bmi>=18.5 && bmi<=22.9){
+            bmiResult = "정상"
+        }else{
+            bmiResult = "저체중"
+        }
+
+        // document.write(`당신의 키는 ${height}센티미터이고 몸무게는 ${weight}kg입니다 bmi수치는 ${bmi}이며 ${a}입니다`)
+        // document.write(`당신의 키는 ${height}센티미터이고 몸무게는 ${weight}kg입니다 bmi수치는 ${bmi}이며 ${bmiResult}입니다`)
+
+        document.write(`
+        <table class="gradeStyle">
+        <caption>🦄${name}님의 비만도 검사결과🦄</caption>
+        <tr>
+              <th>신장</th>
+              <td>${height}cm</td>  
+        </tr>
+        <tr>
+              <th>체중</th>
+              <td>${weight}kg</td>  
+        </tr>
+        <tr>
+              <th>bmi</th>
+              <td>${bmi}</td>  
+        </tr>
+        <tr>
+              <th>결과</th>
+              <td>${bmiResult}</td>  
+        </tr>
+        </table>`)
+    </script>
+</body>
+</html>
